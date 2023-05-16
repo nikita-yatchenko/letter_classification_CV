@@ -1,0 +1,20 @@
+    name: GitHub Classroom Workflow
+
+    on: [push]
+
+    jobs:
+      run_autograding:
+        name: Autograding
+        runs-on: self-hosted
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+            
+          - name: Save repo name
+            run: echo "${{ github.event.repository.name }}" >> .repo_name
+
+          - name: Autograding
+            uses: education/autograding@v1
+
+          - name: Cleanup
+            run: rm ./letters.csv

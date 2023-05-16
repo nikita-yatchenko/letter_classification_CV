@@ -1,0 +1,13 @@
+{
+    "tests": [
+      {
+        "name": "Check letters classification",
+        "run": "cat ./letters.csv | /usr/bin/letters",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 60,
+        "points": 400
+      }
+    ]
+}
